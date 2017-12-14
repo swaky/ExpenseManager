@@ -13,7 +13,7 @@ var conString="postgres://eocivqdgabjhlc:223a89d1fc3932751d27389032fc8c7055d2387
 app.get("/",function(req,res){
 
   //  res.send("welcome to node on heroku");
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pg.connect(conString, function(err, client, done) {
     console.log(err+"!!!!!!!!!!!!!!!");
    client.query('SELECT NOW()', function(err, result) {
      done();
