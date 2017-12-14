@@ -30,7 +30,7 @@ app.get("/",function(request,response){
   
   pool.query('SELECT * FROM TASKS', (err, res) => {
     console.log(err, res)
-    response.status(200).json({"statys":res.rows});
+    response.status(200).json({"expenses":res.rows,"connection":process.env.DATABASE_URL});
    // client.end()
   })
 });
