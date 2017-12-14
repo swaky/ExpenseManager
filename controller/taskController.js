@@ -46,6 +46,25 @@ exports.create_task =function(request,response){
 
 exports.update_task=function(request,response)
 {
+  const data = {uid:request.body.uid, name : request.body.name
+    ,description : request.body.description
+    ,amount : request.body.amount};
+  
+    pool.query('UPDATE TASKS SET name=($1),description=($2),amount=($3) WHERE uid=($4)',
+    [data.name,data.description,data.amount,data.uid],(err,res)=>{
+      if (err) {
+        console.log(err.stack)
+  
+        response.json({"error":err});
+      } else {
+        console.log(res.rows[0])
+  
+        response.status(200).json({"result":"update successful"});
+        // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+      
+      
+      }
+    });
 
 }
 
