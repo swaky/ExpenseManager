@@ -15,7 +15,7 @@ app.get("/",function(req,res){
   //  res.send("welcome to node on heroku");
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     console.log(err+"!!!!!!!!!!!!!!!");
-   client.query('SELECT * FROM your_table', function(err, result) {
+   client.query('SELECT NOW()', function(err, result) {
      done();
      if(err) return console.error(err);
      console.log(result.rows);
