@@ -25,7 +25,7 @@ exports.create_task =function(request,response){
   ,amount : request.body.amount};
 
   pool.query('INSERT INTO TASKS(name,description,amount) values($1, $2, $3)',
-  [data.uid, data.name,data.description,data.amount],(err,res)=>{
+  [data.name,data.description,data.amount],(err,res)=>{
     if (err) {
       console.log(err.stack)
 
