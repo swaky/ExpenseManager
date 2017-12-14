@@ -40,7 +40,7 @@ exports.create_task =function(request,response){
     }
   });
 
-  response.status(200).json({"test":data});
+  //response.status(200).json({"test":data});
         
 }
 
