@@ -7,6 +7,9 @@ module.exports =function(app){
     //task routes
 
     app.route('/tasks')
-    .get(task.list_all_tasks);
+    .get(task.list_all_tasks)
+    .post(task.create_task)
+    .put(task.update_task)
+    .delete(task.delete_task);
 
 };

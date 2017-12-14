@@ -4,39 +4,10 @@ var app=express();
 var port=process.env.PORT || 3000;
 var pg = require('pg');
 
+bodyParser = require('body-parser');
 
-
-// const { Pool, Client } = require('pg')
-
-// const connectionString =process.env.DATABASE_URL;
-// const pool = new Pool({
-//   connectionString: connectionString,
-// })
-
-// pool.query('SELECT NOW()', (err, res) => {
-//   console.log(err, res)
-//  // pool.end()
-// })
-
-// const client = new Client({
-//   connectionString: connectionString,
-// })
-
-/*
-app.get("/",function(request,response){
-
-  //  res.send("welcome to node on heroku");
- 
- // client.connect()
-  
-  pool.query('SELECT * FROM TASKS', (err, res) => {
-    console.log(err, res)
-    response.status(200).json({"expenses":res.rows});
-   // client.end()
-  })
-});
-
-*/
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 var routes =require('./routes/taskRoutes');
