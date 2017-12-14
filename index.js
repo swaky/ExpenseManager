@@ -22,7 +22,7 @@ const client = new Client({
   connectionString: connectionString,
 })
 
-app.get("/",function(req,res){
+app.get("/",function(request,response){
 
   //  res.send("welcome to node on heroku");
  
@@ -30,6 +30,7 @@ app.get("/",function(req,res){
   
   client.query('SELECT * FROM TASKS', (err, res) => {
     console.log(err, res)
+    response.status(200).json({"statys":res.rows});
     client.end()
   })
 });
