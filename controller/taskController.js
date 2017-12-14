@@ -20,7 +20,7 @@ exports.list_all_tasks =function(request,response){
 }
 
 exports.create_task =function(request,response){
-  const data = {uid: request.body.uid, name : request.body.name
+  const data = {name : request.body.name
   ,description : request.body.description
   ,amount : request.body.amount};
 
