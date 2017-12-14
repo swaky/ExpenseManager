@@ -28,7 +28,7 @@ app.get("/",function(req,res){
  
   client.connect()
   
-  client.query('SELECT NOW()', (err, res) => {
+  client.query('SELECT * FROM TASKS', (err, res) => {
     console.log(err, res)
     client.end()
   })
