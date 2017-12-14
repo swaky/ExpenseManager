@@ -1,0 +1,14 @@
+{
+  "name": "expensemanager",
+  "version": "1.0.0",
+  "description": "expense manager app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "swanand keskar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
