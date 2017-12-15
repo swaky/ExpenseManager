@@ -70,4 +70,22 @@ exports.update_task=function(request,response)
 
 exports.delete_task=function(request,response){
 
+  const id = request.body.uid;
+  
+    pool.query('DELETE FROM TASKS WHERE uid=($1)',
+    [id],(err,res)=>{
+      if (err) {
+        console.log(err.stack)
+  
+        response.json({"error":err});
+      } else {
+        console.log(res.rows[0])
+  
+        response.status(200).json({"result":"delete successful"});
+        // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+      
+      
+      }
+    });
+
 }
