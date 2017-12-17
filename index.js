@@ -1,8 +1,15 @@
 var express = require("express");
 
+var cors = require('cors');
+
+
 var app=express();
 var port=process.env.PORT || 3000;
 var pg = require('pg');
+
+
+
+app.use(cors());
 
 bodyParser = require('body-parser');
 
